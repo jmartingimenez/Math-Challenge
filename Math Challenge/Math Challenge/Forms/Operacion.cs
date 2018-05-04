@@ -68,13 +68,10 @@ namespace Math_Challenge.Forms {
 
         private void Controlar_Resultado()
         {
-            //Si la cuenta esta mal, se cierra la ventana
             int input = Int32.Parse(this.Resultado.Text);
-            if (Calculo.resultado != input)
-            {
-                //MessageBox.Show("Perdiste!!");
-                this.Close();
-            }
+
+            //Si la cuenta esta mal, el jugador pierde            
+            if (Calculo.resultado != input) derrotarJugador(input);
 
             //Sumamos uno al contador de respuestas correctas
             respuestasCorrectas++;
@@ -88,6 +85,35 @@ namespace Math_Challenge.Forms {
 
             //Mostramos la nueva operación en pantalla
             mostrarOperacionActual();
+        }
+
+        /*Este método quita todo de la pantalla, detiene el timer 
+         y agrega el mensaje de derrota y un botón para volver*/
+        private void derrotarJugador(int input)
+        {
+            //Se detiene el timer
+            Timer.Stop();
+
+            //Se oculta todo de la pantalla
+            this.Tiempo.Hide();
+            this.OperacionLabel.Hide();
+            this.Resultado.Hide();
+            this.IconoMasContador.Hide();
+            this.ContadorRespuestas.Hide();
+
+            //Se hace visible el label con el mensaje 
+            this.msjDerrota.Text = "Te equivocaste!!\n" +
+                Calculo.MostrarCuenta() + Calculo.resultado +
+                "\nIngresaste " + input +
+                "\nRespuestas: " + respuestasCorrectas;
+            this.msjDerrota.Show();
+            this.btnMenu.Show();
+        }
+
+        //Se cierra esta form para ver el menú de nuevo
+        private void btnMenu_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

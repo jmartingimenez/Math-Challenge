@@ -31,6 +31,8 @@
             this.Tiempo = new System.Windows.Forms.Label();
             this.IconoMasContador = new System.Windows.Forms.Label();
             this.ContadorRespuestas = new System.Windows.Forms.Label();
+            this.msjDerrota = new System.Windows.Forms.Label();
+            this.btnMenu = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // OperacionLabel
@@ -85,16 +87,43 @@
             this.ContadorRespuestas.TabIndex = 4;
             this.ContadorRespuestas.Text = "0";
             // 
+            // msjDerrota
+            // 
+            this.msjDerrota.AutoSize = true;
+            this.msjDerrota.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.msjDerrota.ForeColor = System.Drawing.Color.Red;
+            this.msjDerrota.Location = new System.Drawing.Point(28, 21);
+            this.msjDerrota.Name = "msjDerrota";
+            this.msjDerrota.Size = new System.Drawing.Size(240, 31);
+            this.msjDerrota.TabIndex = 5;
+            this.msjDerrota.Text = "Te equivocaste!!!";
+            this.msjDerrota.Visible = false;
+            // 
+            // btnMenu
+            // 
+            this.btnMenu.Location = new System.Drawing.Point(87, 216);
+            this.btnMenu.Name = "btnMenu";
+            this.btnMenu.Size = new System.Drawing.Size(98, 36);
+            this.btnMenu.TabIndex = 6;
+            this.btnMenu.Text = "Menú";
+            this.btnMenu.UseVisualStyleBackColor = true;
+            this.btnMenu.Visible = false;
+            this.btnMenu.Click += new System.EventHandler(this.btnMenu_Click);
+            // 
             // Operacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(292, 273);
+            this.Controls.Add(this.btnMenu);
+            this.Controls.Add(this.msjDerrota);
             this.Controls.Add(this.ContadorRespuestas);
             this.Controls.Add(this.IconoMasContador);
             this.Controls.Add(this.Tiempo);
             this.Controls.Add(this.Resultado);
             this.Controls.Add(this.OperacionLabel);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "Operacion";
             this.Text = "Jugando - Math Challenge by Yony!";
             this.ResumeLayout(false);
@@ -109,5 +138,7 @@
         private System.Windows.Forms.Label Tiempo;
         private System.Windows.Forms.Label IconoMasContador;
         private System.Windows.Forms.Label ContadorRespuestas;
+        private System.Windows.Forms.Label msjDerrota;
+        private System.Windows.Forms.Button btnMenu;
     }
 }
