@@ -54,7 +54,7 @@ namespace Math_Challenge.Forms {
                 Controlar_Resultado();
             
             //Este if controla que solo se ingresen números
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
             {
                 e.Handled = true;
             }
