@@ -47,39 +47,48 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Clases\Calculo.cs" />
-    <Compile Include="Clases\SaveRecord.cs" />
+    <Compile Include="Clases\ArchivoRecord.cs" />
     <Compile Include="Clases\Record.cs" />
     <Compile Include="Clases\Resta.cs" />
     <Compile Include="Clases\Suma.cs" />
     <Compile Include="Clases\SumaResta.cs" />
-    <Compile Include="Forms\Instrucciones.cs">
+    <Compile Include="Forms\InstruccionesForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Instrucciones.Designer.cs">
-      <DependentUpon>Instrucciones.cs</DependentUpon>
+    <Compile Include="Forms\InstruccionesForm.Designer.cs">
+      <DependentUpon>InstruccionesForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Menu.cs">
+    <Compile Include="Forms\MenuForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Menu.Designer.cs">
-      <DependentUpon>Menu.cs</DependentUpon>
+    <Compile Include="Forms\MenuForm.Designer.cs">
+      <DependentUpon>MenuForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Operacion.cs">
+    <Compile Include="Forms\OperacionForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Operacion.Designer.cs">
-      <DependentUpon>Operacion.cs</DependentUpon>
+    <Compile Include="Forms\OperacionForm.Designer.cs">
+      <DependentUpon>OperacionForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\RecordForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\RecordForm.Designer.cs">
+      <DependentUpon>RecordForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Forms\Instrucciones.resx">
-      <DependentUpon>Instrucciones.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\InstruccionesForm.resx">
+      <DependentUpon>InstruccionesForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Menu.resx">
-      <DependentUpon>Menu.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\MenuForm.resx">
+      <DependentUpon>MenuForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Operacion.resx">
-      <DependentUpon>Operacion.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\OperacionForm.resx">
+      <DependentUpon>OperacionForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\RecordForm.resx">
+      <DependentUpon>RecordForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

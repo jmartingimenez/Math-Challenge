@@ -20,6 +20,11 @@ namespace Math_Challenge.Clases {
         private string pathArchivo;
         private Modo Modo;
 
+        public ArchivoRecord()
+        {
+            leer();
+        }
+
         public ArchivoRecord(Record Record)
         {
             this.Record = Record;
@@ -65,6 +70,22 @@ namespace Math_Challenge.Clases {
                 {
                     bf.Serialize(ms, Record);
                 }
+            }
+        }
+
+        private void leer()
+        {
+            try
+            {
+                using (FileStream fs = File.OpenRead(pathArchivo))
+                {
+                    BinaryFormatter bf = new BinaryFormatter();
+                    this.Record = (Record)bf.Deserialize(fs);
+                }
+            }
+            catch
+            {
+                //Mensaje de que no hay records o no pudo leer
             }
         }
     }

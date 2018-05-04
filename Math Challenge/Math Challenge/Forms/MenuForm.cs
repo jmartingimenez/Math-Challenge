@@ -52,22 +52,22 @@ namespace Math_Challenge {
 
         private void Sumar_Click(object sender, EventArgs e)
         {
-            AnyButtonClickOnMenu(new Operacion(new Suma()));
+            AnyButtonClickOnMenu(new OperacionForm(new Suma()));
         }
 
         private void Restar_Click(object sender, EventArgs e)
         {
-            AnyButtonClickOnMenu(new Operacion(new Resta()));
+            AnyButtonClickOnMenu(new OperacionForm(new Resta()));
         }
 
         private void Mixto_Click(object sender, EventArgs e)
         {
-            AnyButtonClickOnMenu(new Operacion(new SumaResta()));
+            AnyButtonClickOnMenu(new OperacionForm(new SumaResta()));
         }
 
         private void Records_Click(object sender, EventArgs e)
         {
-
+            AnyButtonClickOnMenu(new RecordForm());
         }
     }
 }

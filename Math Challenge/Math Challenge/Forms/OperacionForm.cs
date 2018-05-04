@@ -10,13 +10,13 @@ using System.Windows.Forms;
 using Math_Challenge.Clases;
 
 namespace Math_Challenge.Forms {
-    public partial class Operacion : Form {
+    public partial class OperacionForm : Form {
         private Calculo Calculo;
         private int tiempoLimite = 30;
         private int respuestasCorrectas = 0;
         private Timer Timer;
 
-        public Operacion(Calculo Calculo)
+        public OperacionForm(Calculo Calculo)
         {
             InitializeComponent();
             this.Calculo = Calculo;

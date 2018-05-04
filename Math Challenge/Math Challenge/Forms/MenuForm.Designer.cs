@@ -65,7 +65,6 @@
             // 
             // Records
             // 
-            this.Records.Enabled = false;
             this.Records.Location = new System.Drawing.Point(154, 213);
             this.Records.Name = "Records";
             this.Records.Size = new System.Drawing.Size(115, 46);

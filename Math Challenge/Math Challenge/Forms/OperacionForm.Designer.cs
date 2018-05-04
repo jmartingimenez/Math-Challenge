@@ -1,5 +1,5 @@
 ﻿namespace Math_Challenge.Forms {
-    partial class Operacion {
+    partial class OperacionForm {
         /// <summary>
         /// Required designer variable.
         /// </summary>
