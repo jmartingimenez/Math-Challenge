@@ -16,21 +16,6 @@ namespace Math_Challenge.Clases {
             this.Autor = Autor;
             this.Respuestas = Respuestas;
             this.Modo = Modo;
-
-            //Se crea la carpeta, si no existe...
-            string APPDATA = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
-            string carpetaDeRecords = Path.Combine(APPDATA, "Math Challenge\\Records");
-            Directory.CreateDirectory(carpetaDeRecords);
-
-            //Se genera el archivo si no existe (Esto aca no va)
-            /*string pathArchivo = carpetaDeRecords + "\\rec.txt";
-            if (!File.Exists(pathArchivo))
-            {
-                //File.Create(pathArchivo);
-                TextWriter tw = new StreamWriter(pathArchivo);
-                tw.WriteLine("Nombre: " + Autor + ", Respuestas: " + Respuestas + ", Modo: " + Modo);
-                tw.Close();
-            }*/
         }
     }
 }

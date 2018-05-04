@@ -36,9 +36,9 @@ namespace Math_Challenge.Forms {
             Tiempo.Text = tiempoLimite.ToString() + "''";
             if (tiempoLimite == 0)
             {
-                //Esto aca no va
                 string modoJugado = Calculo.GetType().Name.ToString();
-                new Record("Jugador", respuestasCorrectas, modoJugado);
+                Record record = new Record("Jugador", respuestasCorrectas, modoJugado);
+                SaveRecord save = new SaveRecord(record);
 
                 Timer.Stop();
                 this.Close();
