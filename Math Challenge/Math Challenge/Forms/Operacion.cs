@@ -38,7 +38,7 @@ namespace Math_Challenge.Forms {
             {
                 string modoJugado = Calculo.GetType().Name.ToString();
                 Record record = new Record("Jugador", respuestasCorrectas, modoJugado);
-                SaveRecord save = new SaveRecord(record);
+                ArchivoRecord save = new ArchivoRecord(record);
 
                 Timer.Stop();
                 this.Close();

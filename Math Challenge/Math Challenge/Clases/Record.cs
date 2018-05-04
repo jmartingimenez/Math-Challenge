@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Math_Challenge.Clases {
+    [Serializable]
     public class Record {
         public string Autor {get;set;}
         public int Respuestas { get; set; }

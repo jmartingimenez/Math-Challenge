@@ -2,15 +2,16 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Math_Challenge.Clases {
     public enum Modo {
-        Suma, Resta, Mixto
+        Suma, Resta, SumaResta
     }
 
-    public class SaveRecord {
+    public class ArchivoRecord {
         public Record Record { get; set; }
 
         private bool NuevoRecord = false;
@@ -19,7 +20,7 @@ namespace Math_Challenge.Clases {
         private string pathArchivo;
         private Modo Modo;
 
-        public SaveRecord(Record Record)
+        public ArchivoRecord(Record Record)
         {
             this.Record = Record;
 
@@ -34,28 +35,37 @@ namespace Math_Challenge.Clases {
             CrearArchivo();
 
             //Si el archivo se acaba de crear, se analiza el record
-            if (NuevoRecord) AnalizarRecord();
-
-
-            //tw.WriteLine("Nombre: " + Autor + ", Respuestas: " + Respuestas + ", Modo: " + Modo);
+            if (NuevoRecord) AnalizarRecord();            
         }
 
         private void CrearArchivo()
         {
-            pathArchivo = carpetaDeRecords + "\\rec_" + Modo.ToString() + ".txt";
+            pathArchivo = carpetaDeRecords + "\\rec_" + Modo.ToString() + ".dat";
             if (!File.Exists(pathArchivo))
             {
-                TextWriter tw = new StreamWriter(pathArchivo);
-                tw.Close();
-
                 //Si no había archivo, lo que llege sera record
                 NuevoRecord = true;
+
+                //Pasar objeto y path para guardar
+                guardar();                
             }
         }
 
         private void AnalizarRecord()
         {
 
+        }
+
+        private void guardar()
+        {
+            BinaryFormatter bf = new BinaryFormatter();
+            using (Stream file = File.OpenWrite(pathArchivo))
+            {
+                using (MemoryStream ms = new MemoryStream())
+                {
+                    bf.Serialize(ms, Record);
+                }
+            }
         }
     }
 }
