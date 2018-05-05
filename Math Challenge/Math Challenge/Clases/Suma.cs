@@ -11,14 +11,14 @@ namespace Math_Challenge.Clases {
         public override void Calcular()
         {
             Random random = new Random();
-            valor1 = random.Next(5, 49);
-            valor2 = random.Next(5, 49);
-            resultado = valor1 + valor2;
+            Valor1 = random.Next(5, 49);
+            Valor2 = random.Next(5, 49);
+            Resultado = Valor1 + Valor2;
         }
 
         public override string MostrarCuenta()
         {
-            return valor1 + " + " + valor2 + ": ";
+            return Valor1 + " + " + Valor2 + ": ";
         }
     }
 }

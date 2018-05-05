@@ -1,11 +1,9 @@
 ﻿using Math_Challenge.Enums;
 using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Xml.Serialization;
 
 namespace Math_Challenge.Clases {
     [Serializable]
@@ -16,17 +14,17 @@ namespace Math_Challenge.Clases {
 
         public Record() {}
 
-        public Record(string Autor, int Respuestas, ModoDeJuego Modo)
+        public Record(string autor, int respuestas, ModoDeJuego modo)
         {
-            this.Autor = Autor;
-            this.Respuestas = Respuestas;
-            this.Modo = Modo;
+            Autor = autor;
+            Respuestas = respuestas;
+            Modo = modo;
         }
 
         public override string ToString()
         {
-            return this.Modo + ": " + this.Autor + ", " +
-                this.Respuestas + " respuestas.";  
+            return Modo + ": " + Autor + ", " +
+                Respuestas + " respuestas.";  
         }
     }
 }

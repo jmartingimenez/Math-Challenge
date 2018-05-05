@@ -12,35 +12,35 @@ using Math_Challenge.Enums;
 
 namespace Math_Challenge.Forms {
     public partial class OperacionForm : Form {
-        private Calculo Calculo;
-        private int tiempoLimite = 30;
-        private int respuestasCorrectas = 0;
-        private Timer Timer;
+        private Calculo _calculo;
+        private int _tiempoLimite = 30;
+        private int _respuestasCorrectas = 0;
+        private Timer _timer;
 
-        public OperacionForm(Calculo Calculo)
+        public OperacionForm(Calculo calculo)
         {
             InitializeComponent();
-            this.Calculo = Calculo;
-            mostrarOperacionActual();
+            _calculo = calculo;
+            MostrarOperacionActual();
 
-            Timer = new Timer();
-            Timer.Interval = 1000; //Cada un segundo va al tick
-            Timer.Enabled = true;
-            Timer.Start();
-            Timer.Tick += Timer_Tick;        
+            _timer = new Timer();
+            _timer.Interval = 1000; //Cada un segundo va al tick
+            _timer.Enabled = true;
+            _timer.Start();
+            _timer.Tick += Timer_Tick;        
         }
 
         //Esto se ejecuta cada segundo del timer
         private void Timer_Tick(object sender, EventArgs e)
         {
-            tiempoLimite--;
-            Tiempo.Text = tiempoLimite.ToString() + "''";
-            if (tiempoLimite == 0)
+            _tiempoLimite--;
+            Tiempo.Text = _tiempoLimite.ToString() + "''";
+            if (_tiempoLimite == 0)
             {
-                string modoJugado = Calculo.GetType().Name.ToString();
-                XMLRecord.Guardar(new Record("Jugador", respuestasCorrectas, (ModoDeJuego)Enum.Parse(typeof(ModoDeJuego), modoJugado)));
+                string modoJugado = _calculo.GetType().Name.ToString();
+                XMLRecord.Guardar(new Record("Jugador", _respuestasCorrectas, (ModoDeJuego)Enum.Parse(typeof(ModoDeJuego), modoJugado)));
 
-                Timer.Stop();
+                _timer.Stop();
                 this.Close();
             }
         }
@@ -61,9 +61,9 @@ namespace Math_Challenge.Forms {
 
         }
 
-        private void mostrarOperacionActual()
+        private void MostrarOperacionActual()
         {
-            this.OperacionLabel.Text = Calculo.MostrarCuenta();
+            this.OperacionLabel.Text = _calculo.MostrarCuenta();
         }
 
         private void Controlar_Resultado()
@@ -71,28 +71,28 @@ namespace Math_Challenge.Forms {
             int input = Int32.Parse(this.Resultado.Text);
 
             //Si la cuenta esta mal, el jugador pierde            
-            if (Calculo.resultado != input) derrotarJugador(input);
+            if (_calculo.Resultado != input) DerrotarJugador(input);
 
             //Sumamos uno al contador de respuestas correctas
-            respuestasCorrectas++;
-            ContadorRespuestas.Text = respuestasCorrectas.ToString();
+            _respuestasCorrectas++;
+            ContadorRespuestas.Text = _respuestasCorrectas.ToString();
             
             //Vaciamos el input del resultado
             this.Resultado.Text = "";
 
             //Generamos una nueva operación
-            Calculo.Calcular();
+            _calculo.Calcular();
 
             //Mostramos la nueva operación en pantalla
-            mostrarOperacionActual();
+            MostrarOperacionActual();
         }
 
         /*Este método quita todo de la pantalla, detiene el timer 
          y agrega el mensaje de derrota y un botón para volver*/
-        private void derrotarJugador(int input)
+        private void DerrotarJugador(int input)
         {
             //Se detiene el timer
-            Timer.Stop();
+            _timer.Stop();
 
             //Se oculta todo de la pantalla
             this.Tiempo.Hide();
@@ -103,15 +103,15 @@ namespace Math_Challenge.Forms {
 
             //Se hace visible el label con el mensaje 
             this.msjDerrota.Text = "Te equivocaste!!\n" +
-                Calculo.MostrarCuenta() + Calculo.resultado +
+                _calculo.MostrarCuenta() + _calculo.Resultado +
                 "\nIngresaste " + input +
-                "\nRespuestas: " + respuestasCorrectas;
+                "\nRespuestas: " + _respuestasCorrectas;
             this.msjDerrota.Show();
             this.btnMenu.Show();
         }
 
         //Se cierra esta form para ver el menú de nuevo
-        private void btnMenu_Click(object sender, EventArgs e)
+        private void BtnMenu_Click(object sender, EventArgs e)
         {
             this.Close();
         }

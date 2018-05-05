@@ -12,9 +12,9 @@ namespace Math_Challenge.Clases {
         public override void Calcular()
         {
             CalculoSeleccionado = CrearCalculo(ElegirModoAlAzar());
-            valor1 = CalculoSeleccionado.valor1;
-            valor2 = CalculoSeleccionado.valor2;
-            resultado = CalculoSeleccionado.resultado;            
+            Valor1 = CalculoSeleccionado.Valor1;
+            Valor2 = CalculoSeleccionado.Valor2;
+            Resultado = CalculoSeleccionado.Resultado;            
         }
 
         //Esto retorna un item del enum al azar (Excepto el mixto)

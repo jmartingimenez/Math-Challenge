@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Math_Challenge.Clases {
     public abstract class Calculo {
-        public int valor1 { set; get; }
-        public int valor2 { set; get; }
-        public int resultado { set; get; }
+        public int Valor1 { set; get; }
+        public int Valor2 { set; get; }
+        public int Resultado { set; get; }
 
         public Calculo()
         {            

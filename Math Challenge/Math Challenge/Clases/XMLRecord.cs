@@ -9,9 +9,9 @@ using System.Xml.Serialization;
 
 namespace Math_Challenge.Clases {
     public static class XMLRecord {
-        private static readonly string APPDATA = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
-        private static readonly string carpetaDeRecords = Path.Combine(APPDATA, "Math Challenge\\Records");
-        private static string pathArchivo;
+        private static readonly string _dir = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+        private static readonly string _carpetaDeRecords = Path.Combine(_dir, "Math Challenge\\Records");
+        private static string _pathArchivo;
 
         /*Si no puede cargarlo (Ej, no existe el archivo) da nulo*/
         public static Record Cargar(ModoDeJuego modo)
@@ -19,13 +19,13 @@ namespace Math_Challenge.Clases {
             try
             {
                 Record record = new Record();
-                pathArchivo = carpetaDeRecords + "\\rec_" + modo.ToString() + ".xml";
+                _pathArchivo = _carpetaDeRecords + "\\rec_" + modo.ToString() + ".xml";
                 XmlSerializer formatter = new XmlSerializer(record.GetType());
-                FileStream File = new FileStream(pathArchivo, FileMode.Open);
-                byte[] buffer = new byte[File.Length];
-                File.Read(buffer, 0, (int)File.Length);
+                FileStream file = new FileStream(_pathArchivo, FileMode.Open);
+                byte[] buffer = new byte[file.Length];
+                file.Read(buffer, 0, (int)file.Length);
                 MemoryStream ms = new MemoryStream(buffer);
-                File.Close();
+                file.Close();
                 record = (Record)formatter.Deserialize(ms);
                 return record;
             }
@@ -35,7 +35,7 @@ namespace Math_Challenge.Clases {
             }
         }
 
-        private static bool esRecordNuevo(Record record)
+        private static bool RecordNuevo(Record record)
         {
             Record recordViejo = Cargar(record.Modo);
 
@@ -48,11 +48,11 @@ namespace Math_Challenge.Clases {
 
         public static void Guardar(Record record)
         {
-            Directory.CreateDirectory(carpetaDeRecords);
-            if (esRecordNuevo(record))
+            Directory.CreateDirectory(_carpetaDeRecords);
+            if (RecordNuevo(record))
             {
-                pathArchivo = carpetaDeRecords + "\\rec_" + record.Modo + ".xml";                
-                FileStream outFile = File.Create(pathArchivo);
+                _pathArchivo = _carpetaDeRecords + "\\rec_" + record.Modo + ".xml";                
+                FileStream outFile = File.Create(_pathArchivo);
                 XmlSerializer formatter = new XmlSerializer(record.GetType());
                 formatter.Serialize(outFile, record);
                 outFile.Close();

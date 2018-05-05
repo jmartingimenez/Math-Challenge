@@ -13,14 +13,14 @@ namespace Math_Challenge.Clases {
         public override void Calcular()
         {
             Random random = new Random();
-            valor1 = random.Next(50, 99);
-            valor2 = random.Next(10, valor1 - 10);
-            resultado = valor1 - valor2;
+            Valor1 = random.Next(50, 99);
+            Valor2 = random.Next(10, Valor1 - 10);
+            Resultado = Valor1 - Valor2;
         }
 
         public override string MostrarCuenta()
         {
-            return valor1 + " - " + valor2 + ": ";
+            return Valor1 + " - " + Valor2 + ": ";
         }
     }
 }

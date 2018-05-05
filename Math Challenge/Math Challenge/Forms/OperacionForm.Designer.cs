@@ -108,7 +108,7 @@
             this.btnMenu.Text = "Menú";
             this.btnMenu.UseVisualStyleBackColor = true;
             this.btnMenu.Visible = false;
-            this.btnMenu.Click += new System.EventHandler(this.btnMenu_Click);
+            this.btnMenu.Click += new System.EventHandler(this.BtnMenu_Click);
             // 
             // Operacion
             // 
