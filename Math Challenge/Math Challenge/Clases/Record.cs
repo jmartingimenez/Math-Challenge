@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Math_Challenge.Enums;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -42,9 +43,9 @@ namespace Math_Challenge.Clases {
             Guardar();
         }
 
-        public Record Cargar()
+        public Record Cargar(string modo)
         {
-            pathArchivo = carpetaDeRecords + "\\rec_Test.xml";
+            pathArchivo = carpetaDeRecords + "\\rec_" + modo.ToString() + ".xml";
             XmlSerializer formatter = new XmlSerializer(this.GetType());
             FileStream File = new FileStream(pathArchivo, FileMode.Open);
             byte[] buffer = new byte[File.Length];
@@ -56,7 +57,7 @@ namespace Math_Challenge.Clases {
 
         public void Guardar()
         {
-            pathArchivo = carpetaDeRecords + "\\rec_Test.xml";
+            pathArchivo = carpetaDeRecords + "\\rec_" + Modo + ".xml";
             FileStream outFile = File.Create(pathArchivo);
             XmlSerializer formatter = new XmlSerializer(this.GetType());
             formatter.Serialize(outFile, this);

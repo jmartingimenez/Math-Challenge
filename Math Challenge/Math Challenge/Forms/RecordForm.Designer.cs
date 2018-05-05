@@ -34,9 +34,8 @@
             this.InfoRecordSuma.AutoSize = true;
             this.InfoRecordSuma.Location = new System.Drawing.Point(22, 40);
             this.InfoRecordSuma.Name = "InfoRecordSuma";
-            this.InfoRecordSuma.Size = new System.Drawing.Size(142, 13);
+            this.InfoRecordSuma.Size = new System.Drawing.Size(0, 13);
             this.InfoRecordSuma.TabIndex = 1;
-            this.InfoRecordSuma.Text = "Pepe Pompin, 15 respuestas";
             // 
             // RecordForm
             // 
