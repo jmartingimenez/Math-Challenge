@@ -8,6 +8,7 @@ namespace Math_Challenge.Enums {
     public enum ModoDeJuego {
         Suma,
         Resta,
+        Multiplicacion,
         Mixto
     }
 }

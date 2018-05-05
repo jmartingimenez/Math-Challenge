@@ -32,13 +32,14 @@
             this.Records = new System.Windows.Forms.Button();
             this.Instrucciones = new System.Windows.Forms.Button();
             this.LinkRepositorio = new System.Windows.Forms.LinkLabel();
+            this.Multiplicar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // Sumar
             // 
-            this.Sumar.Location = new System.Drawing.Point(21, 152);
+            this.Sumar.Location = new System.Drawing.Point(21, 113);
             this.Sumar.Name = "Sumar";
-            this.Sumar.Size = new System.Drawing.Size(115, 45);
+            this.Sumar.Size = new System.Drawing.Size(115, 38);
             this.Sumar.TabIndex = 0;
             this.Sumar.Text = "Sumar";
             this.Sumar.UseVisualStyleBackColor = true;
@@ -46,9 +47,9 @@
             // 
             // Restar
             // 
-            this.Restar.Location = new System.Drawing.Point(154, 152);
+            this.Restar.Location = new System.Drawing.Point(154, 113);
             this.Restar.Name = "Restar";
-            this.Restar.Size = new System.Drawing.Size(115, 45);
+            this.Restar.Size = new System.Drawing.Size(115, 38);
             this.Restar.TabIndex = 1;
             this.Restar.Text = "Restar";
             this.Restar.UseVisualStyleBackColor = true;
@@ -56,9 +57,9 @@
             // 
             // Mixto
             // 
-            this.Mixto.Location = new System.Drawing.Point(21, 213);
+            this.Mixto.Location = new System.Drawing.Point(154, 169);
             this.Mixto.Name = "Mixto";
-            this.Mixto.Size = new System.Drawing.Size(115, 46);
+            this.Mixto.Size = new System.Drawing.Size(115, 38);
             this.Mixto.TabIndex = 2;
             this.Mixto.Text = "Mixto";
             this.Mixto.UseVisualStyleBackColor = true;
@@ -66,9 +67,9 @@
             // 
             // Records
             // 
-            this.Records.Location = new System.Drawing.Point(154, 213);
+            this.Records.Location = new System.Drawing.Point(21, 223);
             this.Records.Name = "Records";
-            this.Records.Size = new System.Drawing.Size(115, 46);
+            this.Records.Size = new System.Drawing.Size(248, 38);
             this.Records.TabIndex = 3;
             this.Records.Text = "Records";
             this.Records.UseVisualStyleBackColor = true;
@@ -76,9 +77,9 @@
             // 
             // Instrucciones
             // 
-            this.Instrucciones.Location = new System.Drawing.Point(21, 86);
+            this.Instrucciones.Location = new System.Drawing.Point(21, 59);
             this.Instrucciones.Name = "Instrucciones";
-            this.Instrucciones.Size = new System.Drawing.Size(248, 50);
+            this.Instrucciones.Size = new System.Drawing.Size(248, 38);
             this.Instrucciones.TabIndex = 4;
             this.Instrucciones.Text = "Instrucciones";
             this.Instrucciones.UseVisualStyleBackColor = true;
@@ -87,7 +88,7 @@
             // LinkRepositorio
             // 
             this.LinkRepositorio.AutoSize = true;
-            this.LinkRepositorio.Location = new System.Drawing.Point(110, 58);
+            this.LinkRepositorio.Location = new System.Drawing.Point(109, 34);
             this.LinkRepositorio.Name = "LinkRepositorio";
             this.LinkRepositorio.Size = new System.Drawing.Size(73, 13);
             this.LinkRepositorio.TabIndex = 5;
@@ -95,11 +96,22 @@
             this.LinkRepositorio.Text = "Código fuente";
             this.LinkRepositorio.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LinkRepositorio_LinkClicked);
             // 
+            // Multiplicar
+            // 
+            this.Multiplicar.Location = new System.Drawing.Point(21, 169);
+            this.Multiplicar.Name = "Multiplicar";
+            this.Multiplicar.Size = new System.Drawing.Size(115, 38);
+            this.Multiplicar.TabIndex = 6;
+            this.Multiplicar.Text = "Multiplicar";
+            this.Multiplicar.UseVisualStyleBackColor = true;
+            this.Multiplicar.Click += new System.EventHandler(this.Multiplicar_Click);
+            // 
             // Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(292, 273);
+            this.Controls.Add(this.Multiplicar);
             this.Controls.Add(this.LinkRepositorio);
             this.Controls.Add(this.Instrucciones);
             this.Controls.Add(this.Records);
@@ -124,6 +136,7 @@
         private System.Windows.Forms.Button Records;
         private System.Windows.Forms.Button Instrucciones;
         private System.Windows.Forms.LinkLabel LinkRepositorio;
+        private System.Windows.Forms.Button Multiplicar;
     }
 }
 

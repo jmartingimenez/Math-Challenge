@@ -60,6 +60,11 @@ namespace Math_Challenge {
             AnyButtonClickOnMenu(new OperacionForm(new Resta()));
         }
 
+        private void Multiplicar_Click(object sender, EventArgs e)
+        {
+            AnyButtonClickOnMenu(new OperacionForm(new Multiplicacion()));
+        }
+
         private void Mixto_Click(object sender, EventArgs e)
         {
             AnyButtonClickOnMenu(new OperacionForm(new Mixto()));

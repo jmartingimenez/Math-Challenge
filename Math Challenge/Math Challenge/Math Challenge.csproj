@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Clases\Multiplicacion.cs" />
     <Compile Include="Clases\XMLRecord.cs" />
     <Compile Include="Clases\Calculo.cs" />
     <Compile Include="Clases\Record.cs" />
