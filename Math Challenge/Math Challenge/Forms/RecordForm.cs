@@ -16,8 +16,10 @@ namespace Math_Challenge.Forms {
             InitializeComponent();
             //InfoRecordSuma.Text = "No hay Records";
 
+            //Mejorar ese llamado a Cargar
             Record record = new Record();
-            InfoRecordSuma.Text = record.ToString();
+            record = record.Cargar();
+            InfoRecordSuma.Text = record.infoRecord();
         }
     }
 }

@@ -24,8 +24,6 @@ namespace Math_Challenge.Clases {
             //Se crea la carpeta, si no existe..
             carpetaDeRecords = Path.Combine(APPDATA, "Math Challenge\\Records");
             Directory.CreateDirectory(carpetaDeRecords);
-
-            Cargar();
         }
 
         public Record(string Autor, int Respuestas, string Modo)
@@ -65,7 +63,7 @@ namespace Math_Challenge.Clases {
             outFile.Close();
         }
 
-        public override string ToString()
+        public string infoRecord()
         {
             string mensaje =  this.Modo + ": " + this.Autor + ", " + 
                 this.Respuestas + " respuestas.";
