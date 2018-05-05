@@ -9,17 +9,11 @@ namespace Math_Challenge.Clases {
     public class Mixto : Calculo {
         public Calculo CalculoSeleccionado {get;set; }
 
-        public Mixto()
-        {
-            Calcular();
-        }
-
         public override void Calcular()
         {
             CalculoSeleccionado = CrearCalculo(ElegirModoAlAzar());
-
-            /*Pongo esto para evitar un NullPointer, ver luego.
-             (Se lo llama en 'Operacion.cs')*/
+            valor1 = CalculoSeleccionado.valor1;
+            valor2 = CalculoSeleccionado.valor2;
             resultado = CalculoSeleccionado.resultado;            
         }
 
