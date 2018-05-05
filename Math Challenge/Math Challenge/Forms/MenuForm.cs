@@ -69,5 +69,10 @@ namespace Math_Challenge {
         {
             AnyButtonClickOnMenu(new RecordForm());
         }
+
+        private void LinkRepositorio_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://github.com/jmartingimenez/Math-Challenge");
+        }
     }
 }

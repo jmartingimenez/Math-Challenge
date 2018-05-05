@@ -31,6 +31,7 @@
             this.Mixto = new System.Windows.Forms.Button();
             this.Records = new System.Windows.Forms.Button();
             this.Instrucciones = new System.Windows.Forms.Button();
+            this.LinkRepositorio = new System.Windows.Forms.LinkLabel();
             this.SuspendLayout();
             // 
             // Sumar
@@ -83,11 +84,23 @@
             this.Instrucciones.UseVisualStyleBackColor = true;
             this.Instrucciones.Click += new System.EventHandler(this.Instrucciones_Click);
             // 
+            // LinkRepositorio
+            // 
+            this.LinkRepositorio.AutoSize = true;
+            this.LinkRepositorio.Location = new System.Drawing.Point(110, 58);
+            this.LinkRepositorio.Name = "LinkRepositorio";
+            this.LinkRepositorio.Size = new System.Drawing.Size(73, 13);
+            this.LinkRepositorio.TabIndex = 5;
+            this.LinkRepositorio.TabStop = true;
+            this.LinkRepositorio.Text = "Código fuente";
+            this.LinkRepositorio.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LinkRepositorio_LinkClicked);
+            // 
             // Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(292, 273);
+            this.Controls.Add(this.LinkRepositorio);
             this.Controls.Add(this.Instrucciones);
             this.Controls.Add(this.Records);
             this.Controls.Add(this.Mixto);
@@ -99,6 +112,7 @@
             this.Text = "Menú - Math Challenge by Yony!";
             this.Load += new System.EventHandler(this.Menu_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -109,6 +123,7 @@
         private System.Windows.Forms.Button Mixto;
         private System.Windows.Forms.Button Records;
         private System.Windows.Forms.Button Instrucciones;
+        private System.Windows.Forms.LinkLabel LinkRepositorio;
     }
 }
 
