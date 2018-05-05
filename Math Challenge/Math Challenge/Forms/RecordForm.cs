@@ -14,9 +14,10 @@ namespace Math_Challenge.Forms {
         public RecordForm()
         {
             InitializeComponent();
-            ArchivoRecord a = new ArchivoRecord();
-            InfoRecordSuma.Text = a.Record.Autor + ", " + 
-                a.Record.Respuestas + " respuestas.";
+            //InfoRecordSuma.Text = "No hay Records";
+
+            Record record = new Record();
+            InfoRecordSuma.Text = record.ToString();
         }
     }
 }

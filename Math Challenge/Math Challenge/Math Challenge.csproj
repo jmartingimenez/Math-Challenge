@@ -47,7 +47,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Clases\Calculo.cs" />
-    <Compile Include="Clases\ArchivoRecord.cs" />
     <Compile Include="Clases\Record.cs" />
     <Compile Include="Clases\Resta.cs" />
     <Compile Include="Clases\Suma.cs" />

@@ -26,23 +26,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.RecordSuma = new System.Windows.Forms.Label();
             this.InfoRecordSuma = new System.Windows.Forms.Label();
             this.SuspendLayout();
-            // 
-            // RecordSuma
-            // 
-            this.RecordSuma.AutoSize = true;
-            this.RecordSuma.Location = new System.Drawing.Point(22, 40);
-            this.RecordSuma.Name = "RecordSuma";
-            this.RecordSuma.Size = new System.Drawing.Size(40, 13);
-            this.RecordSuma.TabIndex = 0;
-            this.RecordSuma.Text = "Suma: ";
             // 
             // InfoRecordSuma
             // 
             this.InfoRecordSuma.AutoSize = true;
-            this.InfoRecordSuma.Location = new System.Drawing.Point(68, 40);
+            this.InfoRecordSuma.Location = new System.Drawing.Point(22, 40);
             this.InfoRecordSuma.Name = "InfoRecordSuma";
             this.InfoRecordSuma.Size = new System.Drawing.Size(142, 13);
             this.InfoRecordSuma.TabIndex = 1;
@@ -54,7 +44,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(292, 273);
             this.Controls.Add(this.InfoRecordSuma);
-            this.Controls.Add(this.RecordSuma);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "RecordForm";
@@ -65,8 +54,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Label RecordSuma;
         private System.Windows.Forms.Label InfoRecordSuma;
     }
 }
