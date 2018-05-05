@@ -62,7 +62,7 @@ namespace Math_Challenge {
 
         private void Mixto_Click(object sender, EventArgs e)
         {
-            AnyButtonClickOnMenu(new OperacionForm(new SumaResta()));
+            AnyButtonClickOnMenu(new OperacionForm(new Mixto()));
         }
 
         private void Records_Click(object sender, EventArgs e)

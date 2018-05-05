@@ -51,7 +51,7 @@
     <Compile Include="Clases\Record.cs" />
     <Compile Include="Clases\Resta.cs" />
     <Compile Include="Clases\Suma.cs" />
-    <Compile Include="Clases\SumaResta.cs" />
+    <Compile Include="Clases\Mixto.cs" />
     <Compile Include="Enums\ModoDeJuego.cs" />
     <Compile Include="Forms\InstruccionesForm.cs">
       <SubType>Form</SubType>
