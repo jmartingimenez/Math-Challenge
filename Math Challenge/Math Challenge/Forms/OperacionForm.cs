@@ -37,7 +37,7 @@ namespace Math_Challenge.Forms {
             if (tiempoLimite == 0)
             {
                 string modoJugado = Calculo.GetType().Name.ToString();
-                Record record = new Record("Jugador", respuestasCorrectas, modoJugado);
+                XMLRecord.Guardar(new Record("Jugador", respuestasCorrectas, modoJugado));
 
                 Timer.Stop();
                 this.Close();

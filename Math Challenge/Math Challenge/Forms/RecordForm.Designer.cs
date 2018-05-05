@@ -46,7 +46,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "RecordForm";
-            this.Text = "Menú - Math Challenge by Yony!";
+            this.Text = "Records - Math Challenge by Yony!";
             this.ResumeLayout(false);
             this.PerformLayout();
 

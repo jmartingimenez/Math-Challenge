@@ -22,16 +22,16 @@ namespace Math_Challenge.Forms {
              para obtener el nombre de cada uno e intentar cargar 
              el archivo correspondiente. Si el archivo no se 
              encuentra muestro que no hay records*/
-            foreach (ModoDeJuego m in Enum.GetValues(typeof(ModoDeJuego)))
+            foreach (ModoDeJuego modo in Enum.GetValues(typeof(ModoDeJuego)))
             {
                 try
                 {
-                    record = record.Cargar(m.ToString());
-                    InfoRecordSuma.Text += record.infoRecord() + "\n";
+                    record = XMLRecord.Cargar(modo);
+                    InfoRecordSuma.Text += record.ToString() + "\n";
                 }
                 catch
                 {
-                    InfoRecordSuma.Text += m.ToString() + ": Sin records\n";
+                    InfoRecordSuma.Text += modo.ToString() + ": Sin records\n";
                 }
             }
         }
