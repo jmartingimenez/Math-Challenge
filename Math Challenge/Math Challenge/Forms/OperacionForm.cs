@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Math_Challenge.Clases;
+using Math_Challenge.Enums;
 
 namespace Math_Challenge.Forms {
     public partial class OperacionForm : Form {
@@ -37,7 +38,7 @@ namespace Math_Challenge.Forms {
             if (tiempoLimite == 0)
             {
                 string modoJugado = Calculo.GetType().Name.ToString();
-                XMLRecord.Guardar(new Record("Jugador", respuestasCorrectas, modoJugado));
+                XMLRecord.Guardar(new Record("Jugador", respuestasCorrectas, (ModoDeJuego)Enum.Parse(typeof(ModoDeJuego), modoJugado)));
 
                 Timer.Stop();
                 this.Close();

@@ -12,11 +12,11 @@ namespace Math_Challenge.Clases {
     public class Record {
         public string Autor {get;set;}
         public int Respuestas { get; set; }
-        public string Modo { get; set; }
+        public ModoDeJuego Modo { get; set; }
 
         public Record() {}
 
-        public Record(string Autor, int Respuestas, string Modo)
+        public Record(string Autor, int Respuestas, ModoDeJuego Modo)
         {
             this.Autor = Autor;
             this.Respuestas = Respuestas;
