@@ -60,7 +60,7 @@
             // 
             // Mixto
             // 
-            this.Mixto.Location = new System.Drawing.Point(154, 149);
+            this.Mixto.Location = new System.Drawing.Point(154, 192);
             this.Mixto.Name = "Mixto";
             this.Mixto.Size = new System.Drawing.Size(115, 35);
             this.Mixto.TabIndex = 2;
@@ -105,7 +105,7 @@
             // 
             // Multiplicar
             // 
-            this.Multiplicar.Location = new System.Drawing.Point(154, 190);
+            this.Multiplicar.Location = new System.Drawing.Point(154, 149);
             this.Multiplicar.Name = "Multiplicar";
             this.Multiplicar.Size = new System.Drawing.Size(115, 37);
             this.Multiplicar.TabIndex = 6;
