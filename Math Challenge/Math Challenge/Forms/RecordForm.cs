@@ -26,7 +26,7 @@ namespace Math_Challenge.Forms {
             {
                 try
                 {
-                    record = XMLRecord.Cargar(modo);
+                    record = ArchivoMathChallenge.CargarRecord(modo);
                     InfoRecordSuma.Text += "\n" + record.ToString() + "\n";
                 }
                 catch

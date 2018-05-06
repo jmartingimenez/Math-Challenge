@@ -15,6 +15,8 @@ namespace Math_Challenge {
         public Menu()
         {
             InitializeComponent();
+            Jugador.Nombre = ArchivoMathChallenge.CargarNombreDeJugador();
+            PlayerNameTextBox.Text = Jugador.Nombre;
         }
 
         private void AnyButtonClickOnMenu(Form form)
@@ -85,6 +87,11 @@ namespace Math_Challenge {
             if (PlayerNameTextBox.Text.Length == 0)
                 Jugador.Nombre = "Anónimo";
             else Jugador.Nombre = PlayerNameTextBox.Text;
+        }
+
+        private void Menu_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            ArchivoMathChallenge.GuardarNombreDeJugador();
         }
     }
 }

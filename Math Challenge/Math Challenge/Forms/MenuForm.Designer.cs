@@ -163,6 +163,7 @@
             this.MaximizeBox = false;
             this.Name = "Menu";
             this.Text = "Menú - Math Challenge by Yony!";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Menu_FormClosed);
             this.Load += new System.EventHandler(this.Menu_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

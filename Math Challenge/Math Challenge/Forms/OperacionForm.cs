@@ -38,7 +38,7 @@ namespace Math_Challenge.Forms {
             if (_tiempoLimite == 0)
             {
                 string modoJugado = _calculo.GetType().Name.ToString();
-                XMLRecord.Guardar(new Record(Jugador.Nombre, _respuestasCorrectas, (ModoDeJuego)Enum.Parse(typeof(ModoDeJuego), modoJugado)));
+                ArchivoMathChallenge.GuardarRecord(new Record(Jugador.Nombre, _respuestasCorrectas, (ModoDeJuego)Enum.Parse(typeof(ModoDeJuego), modoJugado)));
 
                 _timer.Stop();
                 Ocultar_Controles();
@@ -117,7 +117,7 @@ namespace Math_Challenge.Forms {
             this.ContadorRespuestas.Hide();
         }
 
-        //Se cierra esta form para ver el menú de nuevo
+        //Se cierra este form para ver el menú de nuevo
         private void BtnMenu_Click(object sender, EventArgs e)
         {
             this.Close();

@@ -8,18 +8,18 @@ using System.Threading.Tasks;
 using System.Xml.Serialization;
 
 namespace Math_Challenge.Clases {
-    public static class XMLRecord {
+    public static class ArchivoMathChallenge {
         private static readonly string _dir = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
         private static readonly string _carpetaDeRecords = Path.Combine(_dir, "Math Challenge\\Records");
         private static string _pathArchivo;
 
         /*Si no puede cargarlo (Ej, no existe el archivo) da nulo*/
-        public static Record Cargar(ModoDeJuego modo)
+        public static Record CargarRecord(ModoDeJuego modo)
         {
             try
             {
                 Record record = new Record();
-                _pathArchivo = _carpetaDeRecords + "\\rec_" + modo.ToString() + ".xml";
+                _pathArchivo = _carpetaDeRecords + "\\" + modo.ToString() + ".xml";
                 XmlSerializer formatter = new XmlSerializer(record.GetType());
                 FileStream file = new FileStream(_pathArchivo, FileMode.Open);
                 byte[] buffer = new byte[file.Length];
@@ -37,7 +37,7 @@ namespace Math_Challenge.Clases {
 
         private static bool RecordNuevo(Record record)
         {
-            Record recordViejo = Cargar(record.Modo);
+            Record recordViejo = CargarRecord(record.Modo);
 
             if (recordViejo == null) return true;
 
@@ -46,17 +46,39 @@ namespace Math_Challenge.Clases {
             return false;
         }
 
-        public static void Guardar(Record record)
+        public static void GuardarRecord(Record record)
         {
             Directory.CreateDirectory(_carpetaDeRecords);
             if (RecordNuevo(record))
             {
-                _pathArchivo = _carpetaDeRecords + "\\rec_" + record.Modo + ".xml";                
+                _pathArchivo = _carpetaDeRecords + "\\" + record.Modo + ".xml";                
                 FileStream outFile = File.Create(_pathArchivo);
                 XmlSerializer formatter = new XmlSerializer(record.GetType());
                 formatter.Serialize(outFile, record);
                 outFile.Close();
             }
+        }
+
+        public static void GuardarNombreDeJugador()
+        {
+            Directory.CreateDirectory(_carpetaDeRecords);
+            _pathArchivo = _carpetaDeRecords + "\\Usuario.dat";
+            using (StreamWriter sw = new StreamWriter(_pathArchivo, false))
+            {
+                sw.WriteLine(Jugador.Nombre);
+            }
+        }
+
+        public static string CargarNombreDeJugador()
+        {
+            _pathArchivo = _carpetaDeRecords + "\\Usuario.dat";
+            string nombreObtenido = "Jugador";
+            if (File.Exists(_pathArchivo))
+                using (StreamReader sr = new StreamReader(_pathArchivo, true))
+                {
+                    nombreObtenido = sr.ReadLine();
+                }
+            return nombreObtenido;
         }
     }
 }
