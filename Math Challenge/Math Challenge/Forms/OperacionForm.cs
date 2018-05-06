@@ -41,7 +41,8 @@ namespace Math_Challenge.Forms {
                 XMLRecord.Guardar(new Record(Jugador.Nombre, _respuestasCorrectas, (ModoDeJuego)Enum.Parse(typeof(ModoDeJuego), modoJugado)));
 
                 _timer.Stop();
-                Close();                
+                Ocultar_Controles();
+                MensajeFelicitaciones_Label(modoJugado);              
             }
         }
 
@@ -120,6 +121,17 @@ namespace Math_Challenge.Forms {
         private void BtnMenu_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void MensajeFelicitaciones_Label(string modoJugado)
+        {
+            MensajeFelicitaciones.Text = "Felicidades " + Jugador.Nombre + 
+                "!! Duraste 30 segundos.\n" + 
+                "Contestaste " + _respuestasCorrectas + " Respuesta(s) correctamente.\n" + 
+                "Revisa los records para ver si apareces!!" + 
+                "\n\nModo jugado: " + modoJugado;
+            this.MensajeFelicitaciones.Show();
+            this.btnMenu.Show();
         }
     }
 }

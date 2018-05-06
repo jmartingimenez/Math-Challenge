@@ -33,6 +33,7 @@
             this.ContadorRespuestas = new System.Windows.Forms.Label();
             this.msjDerrota = new System.Windows.Forms.Label();
             this.btnMenu = new System.Windows.Forms.Button();
+            this.MensajeFelicitaciones = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // OperacionLabel
@@ -110,11 +111,25 @@
             this.btnMenu.Visible = false;
             this.btnMenu.Click += new System.EventHandler(this.BtnMenu_Click);
             // 
-            // Operacion
+            // MensajeFelicitaciones
+            // 
+            this.MensajeFelicitaciones.AutoSize = true;
+            this.MensajeFelicitaciones.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MensajeFelicitaciones.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.MensajeFelicitaciones.Location = new System.Drawing.Point(12, 36);
+            this.MensajeFelicitaciones.Name = "MensajeFelicitaciones";
+            this.MensajeFelicitaciones.Size = new System.Drawing.Size(274, 65);
+            this.MensajeFelicitaciones.TabIndex = 7;
+            this.MensajeFelicitaciones.Text = "Felicidades <Jugador>!! Duraste 30 segundos. \r\n\r\nContestaste XX Respuesta(s) corr" +
+    "ectamente.\r\n\r\nRevisa los records para ver si apareces!!";
+            this.MensajeFelicitaciones.Visible = false;
+            // 
+            // OperacionForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(292, 273);
+            this.Controls.Add(this.MensajeFelicitaciones);
             this.Controls.Add(this.btnMenu);
             this.Controls.Add(this.msjDerrota);
             this.Controls.Add(this.ContadorRespuestas);
@@ -124,7 +139,7 @@
             this.Controls.Add(this.OperacionLabel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
-            this.Name = "Operacion";
+            this.Name = "OperacionForm";
             this.Text = "Jugando - Math Challenge by Yony!";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -140,5 +155,6 @@
         private System.Windows.Forms.Label ContadorRespuestas;
         private System.Windows.Forms.Label msjDerrota;
         private System.Windows.Forms.Button btnMenu;
+        private System.Windows.Forms.Label MensajeFelicitaciones;
     }
 }

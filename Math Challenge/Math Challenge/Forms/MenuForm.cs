@@ -83,7 +83,7 @@ namespace Math_Challenge {
         private void PlayerNameTextBox_TextChanged(object sender, EventArgs e)
         {
             if (PlayerNameTextBox.Text.Length == 0)
-                Jugador.Nombre = "Anonimo";
+                Jugador.Nombre = "Anónimo";
             else Jugador.Nombre = PlayerNameTextBox.Text;
         }
     }
