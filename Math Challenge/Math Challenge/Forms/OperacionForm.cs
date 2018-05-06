@@ -110,6 +110,12 @@ namespace Math_Challenge.Forms {
 
         private void Ocultar_Controles()
         {
+            this.Tiempo.Enabled = false;
+            this.OperacionLabel.Enabled = false;
+            this.Resultado.Enabled = false;
+            this.IconoMasContador.Enabled = false;
+            this.ContadorRespuestas.Enabled = false;
+
             this.Tiempo.Hide();
             this.OperacionLabel.Hide();
             this.Resultado.Hide();
