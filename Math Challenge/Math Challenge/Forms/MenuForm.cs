@@ -79,5 +79,12 @@ namespace Math_Challenge {
         {
             System.Diagnostics.Process.Start("https://github.com/jmartingimenez/Math-Challenge");
         }
+
+        private void PlayerNameTextBox_TextChanged(object sender, EventArgs e)
+        {
+            if (PlayerNameTextBox.Text.Length == 0)
+                Jugador.Nombre = "Anonimo";
+            else Jugador.Nombre = PlayerNameTextBox.Text;
+        }
     }
 }

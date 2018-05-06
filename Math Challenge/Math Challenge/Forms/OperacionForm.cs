@@ -38,10 +38,10 @@ namespace Math_Challenge.Forms {
             if (_tiempoLimite == 0)
             {
                 string modoJugado = _calculo.GetType().Name.ToString();
-                XMLRecord.Guardar(new Record("Jugador", _respuestasCorrectas, (ModoDeJuego)Enum.Parse(typeof(ModoDeJuego), modoJugado)));
+                XMLRecord.Guardar(new Record(Jugador.Nombre, _respuestasCorrectas, (ModoDeJuego)Enum.Parse(typeof(ModoDeJuego), modoJugado)));
 
                 _timer.Stop();
-                this.Close();
+                Close();                
             }
         }
 
@@ -71,7 +71,11 @@ namespace Math_Challenge.Forms {
             int input = Int32.Parse(this.Resultado.Text);
 
             //Si la cuenta esta mal, el jugador pierde            
-            if (_calculo.Resultado != input) DerrotarJugador(input);
+            if (_calculo.Resultado != input)
+            {
+                Ocultar_Controles();
+                DerrotarJugador(input);
+            }
 
             //Sumamos uno al contador de respuestas correctas
             _respuestasCorrectas++;
@@ -87,19 +91,12 @@ namespace Math_Challenge.Forms {
             MostrarOperacionActual();
         }
 
-        /*Este método quita todo de la pantalla, detiene el timer 
-         y agrega el mensaje de derrota y un botón para volver*/
+        /*Este método detiene el timer y agrega el mensaje de 
+         * derrota y un botón para volver*/
         private void DerrotarJugador(int input)
         {
             //Se detiene el timer
             _timer.Stop();
-
-            //Se oculta todo de la pantalla
-            this.Tiempo.Hide();
-            this.OperacionLabel.Hide();
-            this.Resultado.Hide();
-            this.IconoMasContador.Hide();
-            this.ContadorRespuestas.Hide();
 
             //Se hace visible el label con el mensaje 
             this.msjDerrota.Text = "Te equivocaste!!\n" +
@@ -108,6 +105,15 @@ namespace Math_Challenge.Forms {
                 "\nRespuestas: " + _respuestasCorrectas;
             this.msjDerrota.Show();
             this.btnMenu.Show();
+        }
+
+        private void Ocultar_Controles()
+        {
+            this.Tiempo.Hide();
+            this.OperacionLabel.Hide();
+            this.Resultado.Hide();
+            this.IconoMasContador.Hide();
+            this.ContadorRespuestas.Hide();
         }
 
         //Se cierra esta form para ver el menú de nuevo
