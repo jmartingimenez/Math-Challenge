@@ -23,8 +23,8 @@ namespace Math_Challenge.Clases {
 
         public override string ToString()
         {
-            return Modo + ": " + Autor + ", " +
-                Respuestas + " respuestas.";  
+            return Modo + ": " + Autor + " (+" +
+                Respuestas + ").";  
         }
     }
 }

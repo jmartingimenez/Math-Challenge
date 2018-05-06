@@ -27,13 +27,18 @@ namespace Math_Challenge.Forms {
                 try
                 {
                     record = XMLRecord.Cargar(modo);
-                    InfoRecordSuma.Text += record.ToString() + "\n";
+                    InfoRecordSuma.Text += "\n" + record.ToString() + "\n";
                 }
                 catch
                 {
-                    InfoRecordSuma.Text += modo.ToString() + ": Sin records\n";
+                    InfoRecordSuma.Text += "\n" + modo.ToString() + ": Sin records.\n";
                 }
             }
+        }
+
+        private void Boton_Volver_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }
