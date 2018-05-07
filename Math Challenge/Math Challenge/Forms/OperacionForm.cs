@@ -49,6 +49,12 @@ namespace Math_Challenge.Forms {
         //Método que detecta cuando se presiona alguna tecla
         private void Resultado_KeyPress(object sender, KeyPressEventArgs e)
         {
+            //Cuando se presiona SPACE se borra lo último
+            if (e.KeyChar == ' ')
+            {
+                SendKeys.Send("{BACKSPACE}");
+            }
+
             /*Si se presiona ENTER se controla la operación y 
              se ofrece una nueva*/
             if (e.KeyChar == (char)13 && this.Resultado.Text.Count() > 0)
@@ -56,10 +62,7 @@ namespace Math_Challenge.Forms {
             
             //Este if controla que solo se ingresen números
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
-            {
                 e.Handled = true;
-            }
-
         }
 
         private void MostrarOperacionActual()
