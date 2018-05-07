@@ -51,6 +51,7 @@
             this.Resultado.Location = new System.Drawing.Point(206, 136);
             this.Resultado.MaxLength = 2;
             this.Resultado.Name = "Resultado";
+            this.Resultado.ShortcutsEnabled = false;
             this.Resultado.Size = new System.Drawing.Size(53, 49);
             this.Resultado.TabIndex = 1;
             this.Resultado.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Resultado_KeyPress);
