@@ -58,6 +58,7 @@
             this.Controls.Add(this.Volver);
             this.Controls.Add(this.Info);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "Instrucciones";
             this.Text = "Instrucciones - Math Challenge by Yony!";

@@ -26,6 +26,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(OperacionForm));
             this.OperacionLabel = new System.Windows.Forms.Label();
             this.Resultado = new System.Windows.Forms.TextBox();
             this.Tiempo = new System.Windows.Forms.Label();
@@ -139,6 +140,7 @@
             this.Controls.Add(this.Resultado);
             this.Controls.Add(this.OperacionLabel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "OperacionForm";
             this.Text = "Jugando - Math Challenge by Yony!";

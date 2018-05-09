@@ -26,6 +26,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Menu));
             this.Sumar = new System.Windows.Forms.Button();
             this.Restar = new System.Windows.Forms.Button();
             this.Mixto = new System.Windows.Forms.Button();
@@ -160,6 +161,7 @@
             this.Controls.Add(this.Restar);
             this.Controls.Add(this.Sumar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "Menu";
             this.Text = "Menú - Math Challenge by Yony!";
