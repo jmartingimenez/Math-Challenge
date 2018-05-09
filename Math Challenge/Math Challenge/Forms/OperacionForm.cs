@@ -48,7 +48,7 @@ namespace Math_Challenge.Forms {
 
         //Método que detecta cuando se presiona alguna tecla
         private void Resultado_KeyPress(object sender, KeyPressEventArgs e)
-        {
+        {            
             //Cuando se presiona SPACE se borra lo último
             if (e.KeyChar == ' ')
             {
@@ -109,6 +109,7 @@ namespace Math_Challenge.Forms {
                 "\nRespuestas: " + _respuestasCorrectas;
             this.msjDerrota.Show();
             this.btnMenu.Show();
+            this.btnMenu.Focus();
         }
 
         private void Ocultar_Controles()
@@ -141,6 +142,7 @@ namespace Math_Challenge.Forms {
                 "\n\nModo jugado: " + modoJugado;
             this.MensajeFelicitaciones.Show();
             this.btnMenu.Show();
+            this.btnMenu.Focus();
         }
     }
 }
