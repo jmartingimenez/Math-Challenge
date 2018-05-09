@@ -48,7 +48,10 @@ namespace Math_Challenge.Forms {
 
         //Método que detecta cuando se presiona alguna tecla
         private void Resultado_KeyPress(object sender, KeyPressEventArgs e)
-        {            
+        {
+            //Si se presiona ESCAPE se abandona
+            if (e.KeyChar == (char)27) this.Close();
+            
             //Cuando se presiona SPACE se borra lo último
             if (e.KeyChar == ' ')
             {

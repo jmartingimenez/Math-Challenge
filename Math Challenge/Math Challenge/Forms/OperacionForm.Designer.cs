@@ -104,6 +104,7 @@
             // 
             // btnMenu
             // 
+            this.btnMenu.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnMenu.Location = new System.Drawing.Point(87, 216);
             this.btnMenu.Name = "btnMenu";
             this.btnMenu.Size = new System.Drawing.Size(98, 36);
